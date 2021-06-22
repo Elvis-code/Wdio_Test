@@ -50,9 +50,9 @@ describe('When user is registred already', () => {          // The page that lea
 });
 
 
-describe('When you type a short password', ()=> {
+describe('When you type a short password', ()=> {     //  Controls if the user has typed a valid password
 
-    it('Should display an error message', async()=>{
+    it('Should display an error message', async()=>{        // Display the error message "Password Too Short" 
 
         await LoginPage.open();
 
