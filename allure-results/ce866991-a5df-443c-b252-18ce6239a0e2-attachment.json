@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//md-input-container/md-checkbox/div"
+}

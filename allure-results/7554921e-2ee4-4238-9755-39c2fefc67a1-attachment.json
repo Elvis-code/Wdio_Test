@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//b[contains(.,\"Confirm your phone number\")]"
+}
