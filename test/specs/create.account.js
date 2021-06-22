@@ -2,11 +2,10 @@ const LoginPage = require('../pageobjects/login.page');
 const LoginForm = require('../pageobjects/login.form');
 
 
-
 describe('User can create account', () => {
     it('using valid credentials', async () => {
         await LoginPage.open();   //The page that allows the new user to create an account 
-        await LoginPage.login('username800@mailinator.com', 'User123%');
+        await LoginPage.login('username@mailinator.com', 'User123%');
     });
     
     
@@ -19,7 +18,7 @@ describe('The Form on the basic screen info ', () => {          // The basic inf
         await LoginForm.fillForm('Firstname','Lastname','7589577506','02090'); // The user fill the fields with required information about personal information and get the Continue clickable
         browser.pause(10000);
         await expect(LoginForm.phonescreen).toBeExisting();
-        await  expect(LoginForm.phonescreen).toHaveTextContaining(
+        await expect(LoginForm.phonescreen).toHaveTextContaining(
             'Confirm your phone number');
 });
 });
@@ -44,7 +43,7 @@ describe('When user is registred already', () => {          // The page that lea
 
         browser.url('https://portal.intelycare.com/apply/career.html?step=Login')
 
-        await LoginPage.login('user1@gmail.com', 'Elpas123%');              // The user fill the email and password again with existed credentials
+        await LoginPage.login('user@mailinator.com', 'User123%');              // The user fill the email and password again with existed credentials
 
 
     })

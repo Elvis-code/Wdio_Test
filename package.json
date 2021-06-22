@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wdio/cli": "^7.7.4"
+    "@wdio/cli": "^7.7.4",
+    "wdio-video-reporter": "^3.1.1"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^7.7.3",

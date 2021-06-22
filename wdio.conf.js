@@ -1,3 +1,5 @@
+const video = require('wdio-video-reporter');
+
 exports.config = {
     //
     // ====================
@@ -91,7 +93,7 @@ exports.config = {
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
-    bail: 0,
+    bail: 1,
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
@@ -135,8 +137,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
-
+    reporters: ['spec',['allure', {outputDir: 'allure-results'}], 
+    [video, {
+        saveAllVideos: true,       // If true, also saves videos for successful test cases
+        videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
+      }],
+    ],
 
     
     //
@@ -226,6 +232,7 @@ exports.config = {
     afterTest: function(test, context, { error, result, duration, passed, retries }) {
         if (!passed) {
             browser.takeScreenshot();
+            browser.saveScreenshot('./test/Screenshots/screenshot.png');
         }
     },
 
