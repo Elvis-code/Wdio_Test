@@ -23,7 +23,7 @@ describe('The Form on the basic screen info ', () => {          // The basic inf
 });
 });
 
-describe('When user is registred already', () => {          // Controls if email already exist and must get the 'Email Taken' text.
+describe('When user is registered already', () => {          // Controls if email already exist and must get the 'Email Taken' text.
     
     it("Should return Email Taken", async() =>{
        
@@ -34,7 +34,7 @@ describe('When user is registred already', () => {          // Controls if email
             'Email Taken');
     })
 });
-describe('When user is registred already', () => {          // The page that leads to Login In Page  when user already exists
+describe('When user is registered already', () => {          // The page that leads to Login In Page  when user already exists
     
     it("Should load the Login Page not the Sign Up", async() =>{        
        
@@ -52,7 +52,7 @@ describe('When user is registred already', () => {          // The page that lea
 
 describe('When you type a short password', ()=> {     //  Controls if the user has typed a valid password
 
-    it('Should display an error message', async()=>{        // Display the error message "Password Too Short" 
+    it('Should display an error message', async()=>{        // Display the error message "Password Too Short"
 
         await LoginPage.open();
 
